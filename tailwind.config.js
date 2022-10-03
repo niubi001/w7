@@ -1,9 +1,11 @@
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}"
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        "spin-3s": "spin 3s linear infinite",
+      },
+    },
   },
   plugins: [],
-}
+};

@@ -2,19 +2,16 @@ import { useContext } from "react";
 import NFTTile from "./NFTTile";
 import { dataContext } from "..";
 
-export default function Profile() {
+export default function IProfile() {
   let _data = useContext(dataContext);
+  let myItems = _data.udata;
   let addr = _data.addr;
-  let items = _data.data;
   let funds = _data.funds;
   let contract = _data.contract;
 
-  const myItems = items.filter((item) => {
-    return item.currentOwner === addr;
-  });
   let info = {
     datas: myItems,
-    flag: 0,
+    flag: 1,
   };
   let nLinks = NFTTile(info);
 
@@ -60,7 +57,7 @@ export default function Profile() {
           </button>
         </div>
         <div className="flex flex-col text-center items-center mt-11 text-white">
-          <h2 className="font-bold text-xl mb-5">NFTs on marketplace</h2>
+          <h2 className="font-bold text-xl mb-5">Your NFTs</h2>
           {myItems.length === 0 ? (
             <div></div>
           ) : (
